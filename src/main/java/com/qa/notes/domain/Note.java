@@ -25,13 +25,12 @@ public class Note {
     private String description;
 
 
-    //A constructor of Note allows the creation of a note object so that
-    //When an object of note is created it doesn't need any parameters passed to it
-
     @ManyToOne(targetEntity = NoteBook.class)
     private NoteBook noteBook;
 
 
+    //A constructor of Note allows the creation of a note object so that
+    //When an object of note is created it doesn't need any parameters passed to it
     public Note() {
     }
 
@@ -67,8 +66,8 @@ public class Note {
         this.description = description;
     }
 
-    //================ GET AND SET METHODS ========================
 
+    //================ GET AND SET METHODS ========================
 
     public NoteBook getNoteBook() {
         return noteBook;
@@ -77,5 +76,4 @@ public class Note {
     public void setNoteBook(NoteBook noteBook) {
         this.noteBook = noteBook;
     }
-
 }

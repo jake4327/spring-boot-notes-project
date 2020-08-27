@@ -102,7 +102,10 @@ public class NoteBookController {
     }*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 894329d123bc94a5c136e5736933c244a1c2f7f7
     @GetMapping("/getNoteBookById/{id}")
     public NoteBook getNoteBookById(@PathVariable Long id){
         return this.noteBookService.findNoteBookById(id);
@@ -112,7 +115,10 @@ public class NoteBookController {
     public NoteBook updateNoteBook(@PathVariable Long id, @RequestBody NoteBook noteBook){
         return this.noteBookService.updateNoteBook(id, noteBook);
     }
+<<<<<<< HEAD
 >>>>>>> 314f0b01a67aad9426f8f06ede285dcc4eb4bd3a
+=======
+>>>>>>> 894329d123bc94a5c136e5736933c244a1c2f7f7
 
     /*
 *    @GetMapping("/getNoteById/{id}")

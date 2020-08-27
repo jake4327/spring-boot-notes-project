@@ -1,21 +1,21 @@
 package com.qa.notes.domain;
 
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//What is entity doing?
-// It make an entity
-// What is an the @entity descorator?
-// An entity is a THING(noun) - e.g. NOTE, NOTEBOOK, LOVE
-// An entity is represent in sql to represent something(noun) in a table -
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//What is entity doing?
+// It make an entity
+// What is an the @entity descorator?
+// An entity is a THING(noun) - e.g. NOTE, NOTEBOOK, LOVE
+// An entity is represent in sql to represent something(noun) in a table -
 @Entity
 public class NoteBook {
 
@@ -28,16 +28,15 @@ public class NoteBook {
     @Column
     private String name;
 
+    @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
+    private List<Note> notes = new ArrayList<>();
 
-    /*  @description
+    /*
      * Constructor for notebook that doesn't have any arguments passed
      * why was the old coding convention to use super() in this method?
      *  super is creating a constructor for the super method, this class doesn't
      *  extend a class GUESS the class is inheriting from the @Entity method
     */
-
-    @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
-    private List<Note> notes = new ArrayList<>();
 
     public NoteBook() {
         super();
@@ -66,8 +65,6 @@ public class NoteBook {
     public void setName(String name) {
         this.name = name;
     }
-
-    /*==========GETTER-SETTERS=================*/
 
     public List<Note> getNotes() {
         return notes;
