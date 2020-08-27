@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+* What is a service?
+* Why do I need a different service for each class?
+* W*/
 @Service
 public class NoteBookService {
 
