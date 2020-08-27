@@ -75,7 +75,7 @@ public class NoteBookController {
     /*=============GET,POST,DELETE============*/
 
     @GetMapping("/getAllNoteBooks")
-    public List<NoteBook> getAllNotes(){
+    public List<NoteBook> getAllNoteBooks(){
         return this.noteBookService.readAllNoteBooks();
     }
 
@@ -85,7 +85,7 @@ public class NoteBookController {
     }
 
     @DeleteMapping("/deleteNoteBook/{id}")
-    public Boolean deleteNote(@PathVariable Long id){
+    public Boolean deleteNoteBooks(@PathVariable Long id){
         return this.noteBookService.deleteNoteBookById(id);
     }
     /*===============GET,POST,DELETE===============*/
@@ -101,6 +101,18 @@ public class NoteBookController {
         this.TRACE = TRACE;
     }*/
 
+<<<<<<< HEAD
+=======
+    @GetMapping("/getNoteBookById/{id}")
+    public NoteBook getNoteBookById(@PathVariable Long id){
+        return this.noteBookService.findNoteBookById(id);
+    }
+
+    @PutMapping("/updateNoteBook/{id}")
+    public NoteBook updateNoteBook(@PathVariable Long id, @RequestBody NoteBook noteBook){
+        return this.noteBookService.updateNoteBook(id, noteBook);
+    }
+>>>>>>> 314f0b01a67aad9426f8f06ede285dcc4eb4bd3a
 
     /*
 *    @GetMapping("/getNoteById/{id}")

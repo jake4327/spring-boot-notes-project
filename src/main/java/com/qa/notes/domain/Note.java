@@ -1,9 +1,6 @@
 package com.qa.notes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -27,8 +24,14 @@ public class Note {
     @Column
     private String description;
 
+
     //A constructor of Note allows the creation of a note object so that
     //When an object of note is created it doesn't need any parameters passed to it
+
+    @ManyToOne(targetEntity = NoteBook.class)
+    private NoteBook noteBook;
+
+
     public Note() {
     }
 
@@ -63,5 +66,16 @@ public class Note {
     public void setDescription(String description) {
         this.description = description;
     }
+
     //================ GET AND SET METHODS ========================
+
+
+    public NoteBook getNoteBook() {
+        return noteBook;
+    }
+
+    public void setNoteBook(NoteBook noteBook) {
+        this.noteBook = noteBook;
+    }
+
 }
